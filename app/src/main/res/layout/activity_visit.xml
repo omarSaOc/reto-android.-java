@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.visit.VisitActivity" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvAddress"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="6dp"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        android:background="#FFFF"
+        map:cardCornerRadius="10dp"
+        android:elevation="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="bottom">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_status_not_visit"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginEnd="14dp"
+                    android:layout_gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pendiente"
+                        android:textSize="11sp"
+                        android:textColor="#AAA"
+                        android:fontFamily="@font/roboto_medium"/>
+                    <TextView
+                        android:id="@+id/tvStreetName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Calle La Noche 2722"
+                        android:textSize="13sp"
+                        android:textColor="#333"
+                        android:fontFamily="@font/roboto_medium"/>
+                    <TextView
+                        android:id="@+id/tvSuburb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jardines del bosque"
+                        android:textSize="12sp"
+                        android:textColor="#AAA"
+                        android:fontFamily="@font/roboto_regular"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonNavigation"
+                    android:layout_width="115dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="15dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rounded_button"
+                    android:text="Navegar"
+                    android:textSize="14sp"
+                    android:textColor="#3ac2c2"
+                    android:fontFamily="@font/roboto_medium"/>
+
+                <Button
+                    android:id="@+id/buttonVisit"
+                    android:layout_width="175dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="15dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rounded_button"
+                    android:backgroundTint="#3ac2c2"
+                    android:text="Realizar visita"
+                    android:textSize="14sp"
+                    android:textColor="#FFF"
+                    android:fontFamily="@font/roboto_medium"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvAddressVisited"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="6dp"
+        android:background="#FFFF"
+        android:elevation="6dp"
+        map:cardCornerRadius="10dp"
+        map:layout_constraintBottom_toTopOf="@+id/cvAddress"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.0"
+        map:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="14dp"
+                android:src="@drawable/ic_status_visit" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Visitada"
+                    android:textColor="#3ac2c2"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvStreetNameVisited"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Calle La Noche 2722"
+                    android:textColor="#333"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tvSuburbVisited"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Jardines del bosque"
+                    android:textColor="#AAA"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_nav_back"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="@+id/map" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
